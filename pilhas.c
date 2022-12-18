@@ -11,11 +11,11 @@ typedef struct pilha{
     Elemento *topo;
 }Pilha;
 
-void criar(Pilha *x){
+void criarP(Pilha *x){
     x->topo = NULL;
 }
 
-bool vazia(Pilha *x){
+bool vaziaP(Pilha *x){
     if(x->topo == NULL){
         return true;
     }else{
@@ -36,7 +36,7 @@ bool empilha(Pilha *x, int valor){
 }
 
 bool desempilha(Pilha *x, int *valor){
-    if(!vazia(x)){
+    if(!vaziaP(x)){
         Elemento *y = x->topo;
         x->topo = y->prox;
         y->prox = NULL;
