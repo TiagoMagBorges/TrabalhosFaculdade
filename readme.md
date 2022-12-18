@@ -1,0 +1,1 @@
+Esse projeto é composto por alguns arquivos utilizados em trabalhos da faculdade das disciplinas: Introdução à Programação de Computadores, Estruturas de Dados 1.
