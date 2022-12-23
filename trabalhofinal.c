@@ -20,7 +20,7 @@ struct horario{
 typedef struct horario Horario;
 
 /*
-    * Definicaod a estrutura de dados Carro.
+    * Definicao da estrutura de dados Carro.
     * - 3 vetores de char representando placa, modelo e cor do carro.
     * - 1 char representando o status de permanencia do carro (Presente/Removido).
     * - 2 Horario representando o horario de entrada e saida do carro.
