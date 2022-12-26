@@ -18,14 +18,14 @@ void imprimevetorfloat(float *vetor, int tamanho){
 void recebevetorint(int *vetor, int tamanho){
     for(int i = 0; i < tamanho; i++){
         printf("Insira um valor para Vetor[%d]:\n", i);
-        scanf("%d", &vetor[i]);
+        scanf(" %d", &vetor[i]);
     }
 }
 
 void recebevetorfloat(float *vetor, int tamanho){
     for(int i = 0; i < tamanho; i++){
         printf("Insira um valor para Vetor[%d]:\n", i);
-        scanf("%f", &vetor[i]);
+        scanf(" %f", &vetor[i]);
     }
 }
 
@@ -34,7 +34,7 @@ int main(){
     printf("Insira o numero da atividade que voce deseja acessar:\n");
 
     while(1){
-        scanf("%d", &exer);
+        scanf(" %d", &exer);
 
         if(exer == 1){ // Exercício 1.
 
@@ -46,13 +46,13 @@ int main(){
 
             do{
                 printf("Insira a quantidade de quebrados (3, 4 ou 5): \n");
-                scanf("%d", &qtd);
+                scanf(" %d", &qtd);
             }while(qtd < 3 || qtd > 5);
             qtd -= 3;
 
             do{
                 printf("Para escolher o tipo A, digite 1.\nPara escolher o tipo B, digite 2.\nPara escolher o tipo C, digite 3.\nPara escolher o tipo D, digite 4.\n");
-                scanf("%d", &tipo);
+                scanf(" %d", &tipo);
             }while(tipo < 1 || tipo > 4);
             tipo -= 1;
 
@@ -67,7 +67,7 @@ int main(){
 
             for(int i = 0; i < TAM; i++){
                 printf("Insira um valor para Vetor[%d]: \n", i);
-                scanf("%d", &num);
+                scanf(" %d", &num);
 
                 for(int j = 0; j < i; j++){
                     if(vetor[j] == num){
@@ -112,7 +112,7 @@ int main(){
             int tam;
 
             printf("Insira o tamanho do vetor:\n");
-            scanf("%d", &tam);
+            scanf(" %d", &tam);
 
             float soma = 0, vetor[tam];
 
@@ -131,13 +131,13 @@ int main(){
             int tam;
 
             printf("Insira o tamanho do vetor:\n");
-            scanf("%d", &tam);
+            scanf(" %d", &tam);
 
             float vetor[tam];
 
             for(int i = 0; i < tam; i++){
                 printf("Insira um valor:\n");
-                scanf("%f", &vetor[i]);
+                scanf(" %f", &vetor[i]);
                 media += vetor[i];
             }
 

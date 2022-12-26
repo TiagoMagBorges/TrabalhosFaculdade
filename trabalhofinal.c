@@ -64,7 +64,7 @@ int main(){
                "5- Listar.\n"
                "====================\n"
                "Opcao: \n");
-        scanf("%d", &opcao);fflush(stdin);
+        scanf(" %d", &opcao);
         switch (opcao){
             case 1: inserir(arquivo); break;
             case 2: alterar(arquivo); break;
@@ -92,19 +92,19 @@ void validahorarioentrada(Carro *x){
     printf("====================\n"
            "Informacoes sobre data e hora.\n");
     printf("Ano: \n");
-    scanf("%d", &x->inicio.ano);fflush(stdin);
+    scanf(" %d", &x->inicio.ano);
     if ((x->inicio.ano % 400 == 0) || ((x->inicio.ano % 4 == 0) && (x->inicio.ano % 100 != 0))) {
         bissexto = 1;
     }
     printf("Mes: \n");
     while(1){
-        scanf("%d", &x->inicio.mes);fflush(stdin);
+        scanf(" %d", &x->inicio.mes);
         if(x->inicio.mes < 0 || x->inicio.mes > 12){
             printf("Mes invalido, tente novamente.\n");
         }else if (x->inicio.mes == 1 || x->inicio.mes == 3 || x->inicio.mes == 5 || x->inicio.mes == 7 || x->inicio.mes == 8 || x->inicio.mes == 10 || x->inicio.mes == 12){
             printf("Dia: \n");
             while(1){
-                scanf("%d", &x->inicio.dia);fflush(stdin);
+                scanf(" %d", &x->inicio.dia);
                 if(x->inicio.dia > 0 && x->inicio.dia <= 31){
                     break;
                 }else{
@@ -115,7 +115,7 @@ void validahorarioentrada(Carro *x){
         }else if(x->inicio.mes == 4 || x->inicio.mes == 6 || x->inicio.mes == 9 || x->inicio.mes == 11){
             printf("Dia: \n");
             while(1){
-                scanf("%d", &x->inicio.dia);fflush(stdin);
+                scanf(" %d", &x->inicio.dia);
                 if(x->inicio.dia > 0 && x->inicio.dia <= 30){
                     break;
                 }else{
@@ -127,7 +127,7 @@ void validahorarioentrada(Carro *x){
             if(bissexto == 1){
                 printf("Dia: \n");
                 while(1){
-                    scanf("%d", &x->inicio.dia);fflush(stdin);
+                    scanf(" %d", &x->inicio.dia);
                     if(x->inicio.dia > 0 && x->inicio.dia <= 29){
                         break;
                     }else{
@@ -137,7 +137,7 @@ void validahorarioentrada(Carro *x){
             }else{
                 printf("Dia: \n");
                 while (1) {
-                    scanf("%d", &x->inicio.dia);fflush(stdin);
+                    scanf(" %d", &x->inicio.dia);
                     if (x->inicio.dia > 0 && x->inicio.dia <= 28){
                         break;
                     } else {
@@ -152,7 +152,7 @@ void validahorarioentrada(Carro *x){
     }
     printf("Hora: \n");
     while(1){
-        scanf("%d", &x->inicio.hora);fflush(stdin);
+        scanf(" %d", &x->inicio.hora);
         if(x->inicio.hora >= 0 && x->inicio.hora < 24){
             break;
         }else{
@@ -161,7 +161,7 @@ void validahorarioentrada(Carro *x){
     }
     printf("Minuto: \n");
     while(1){
-        scanf("%d", &x->inicio.min);fflush(stdin);
+        scanf(" %d", &x->inicio.min);
         if(x->inicio.min >= 0 && x->inicio.min <= 59){
             break;
         }else{
@@ -182,19 +182,19 @@ void validahorariosaida(Carro *x) {
     printf("====================\n"
            "Informacoes sobre data e hora.\n");
     printf("Ano: \n");
-    scanf("%d", &x->fim.ano);fflush(stdin);
+    scanf(" %d", &x->fim.ano);
     if ((x->fim.ano % 400 == 0) || ((x->fim.ano % 4 == 0) && (x->fim.ano % 100 != 0))) {
         bissexto = 1;
     }
     printf("Mes: \n");
     while (1) {
-        scanf("%d", &x->fim.mes);fflush(stdin);
+        scanf(" %d", &x->fim.mes);
         if(x->fim.mes < 0 || x->fim.mes > 12){
             printf("Mes invalido, tente novamente.\n");
         }else if(x->fim.mes == 1 || x->fim.mes == 3 || x->fim.mes == 5 || x->fim.mes == 7 || x->fim.mes == 8 || x->fim.mes == 10 || x->fim.mes == 12){
             printf("Dia: \n");
             while (1) {
-                scanf("%d", &x->fim.dia);fflush(stdin);
+                scanf(" %d", &x->fim.dia);
                 if(x->fim.dia > 0 && x->fim.dia <= 31){
                     break;
                 }else{
@@ -205,7 +205,7 @@ void validahorariosaida(Carro *x) {
         }else if(x->fim.mes == 4 || x->fim.mes == 6 || x->fim.mes == 9 || x->fim.mes == 11){
             printf("Dia: \n");
             while (1) {
-                scanf("%d", &x->fim.dia);fflush(stdin);
+                scanf(" %d", &x->fim.dia);
                 if (x->fim.dia > 0 && x->fim.dia <= 30) {
                     break;
                 } else {
@@ -217,7 +217,7 @@ void validahorariosaida(Carro *x) {
             if (bissexto == 1) {
                 printf("Dia: \n");
                 while (1) {
-                    scanf("%d", &x->fim.dia);fflush(stdin);
+                    scanf(" %d", &x->fim.dia);
                     if (x->fim.dia > 0 && x->fim.dia <= 29) {
                         break;
                     } else {
@@ -227,7 +227,7 @@ void validahorariosaida(Carro *x) {
             } else {
                 printf("Dia: \n");
                 while (1) {
-                    scanf("%d", &x->fim.dia);fflush(stdin);
+                    scanf(" %d", &x->fim.dia);
                     if (x->fim.dia > 0 && x->fim.dia <= 28) {
                         break;
                     } else {
@@ -242,7 +242,7 @@ void validahorariosaida(Carro *x) {
     }
     printf("Hora: \n");
     while (1) {
-        scanf("%d", &x->fim.hora);fflush(stdin);
+        scanf(" %d", &x->fim.hora);
         if (x->fim.hora >= 0 && x->fim.hora < 24) {
             break;
         } else {
@@ -251,7 +251,7 @@ void validahorariosaida(Carro *x) {
     }
     printf("Minuto: \n");
     while (1) {
-        scanf("%d", &x->fim.min);fflush(stdin);
+        scanf(" %d", &x->fim.min);
         if (x->fim.min >= 0 && x->fim.min <= 59) {
             break;
         } else {
@@ -272,11 +272,11 @@ void inserir(FILE *arquivo){
     printf("====================\n"
            "Informacoes sobre o veiculo.\n");
     printf("Placa: \n");
-    gets(x->placa);fflush(stdin);
+    gets(x->placa);
     printf("Modelo: \n");
-    gets(x->modelo);fflush(stdin);
+    gets(x->modelo);
     printf("Cor: \n");
-    gets(x->cor);fflush(stdin);
+    gets(x->cor);
     validahorarioentrada(x);
     x->status = 'P';
     fseek(arquivo, 0, SEEK_END);
@@ -317,7 +317,7 @@ void buscar(FILE *arquivo){
     char placa[8];
     Carro x;
     printf("Digite a placa do veiculo: \n");
-    gets(placa);fflush(stdin);
+    gets(placa);
     while(fread(&x, sizeof(Carro), 1, arquivo) == 1){
         if(strcmp(placa, x.placa) == 0 && x.status == 'P'){
             printf("====================\n"
@@ -343,7 +343,7 @@ void alterar(FILE *arquivo){
     char placa[8];
     Carro x;
     printf("Digite a placa do veiculo a ser alterado: \n");
-    gets(placa);fflush(stdin);
+    gets(placa);
     while(fread(&x, sizeof(Carro), 1, arquivo) == 1){
         if(strcmp(placa, x.placa) == 0 && x.status == 'P'){
             printf("====================\n"
@@ -362,11 +362,11 @@ void alterar(FILE *arquivo){
                        "3- Cor.\n"
                        "====================\n"
                        "Opcao: \n");
-                scanf("%d", &op);fflush(stdin);
+                scanf(" %d", &op);
                 switch (op){
-                    case 1: printf("Placa antiga: %s\nPlaca atual: ", x.placa);gets(x.placa);fflush(stdin);break;
-                    case 2: printf("Modelo antigo: %s\nModelo atual: ", x.modelo);gets(x.modelo);fflush(stdin);break;
-                    case 3: printf("Cor antiga: %s\nCor atual: ", x.cor);gets(x.cor);fflush(stdin);break;
+                    case 1: printf("Placa antiga: %s\nPlaca atual: ", x.placa);gets(x.placa);break;
+                    case 2: printf("Modelo antigo: %s\nModelo atual: ", x.modelo);gets(x.modelo);break;
+                    case 3: printf("Cor antiga: %s\nCor atual: ", x.cor);gets(x.cor);break;
                 }
             }while(op != 0);
             posicao = ftell(arquivo) - sizeof(Carro);
@@ -392,7 +392,7 @@ void remover(FILE *arquivo){
     char placa[8];
     Carro *x = (Carro*) malloc(1* sizeof(Carro));
     printf("Digite a placa do veiculo a ser removido: \n");
-    gets(placa);fflush(stdin);
+    gets(placa);
     while(fread(x, sizeof(Carro), 1, arquivo) == 1){
         if(strcmp(placa, x->placa) == 0 && x->status == 'P'){
             printf("====================\n"

@@ -105,13 +105,13 @@ int main(){
     int exer;
     printf("Insira o numero de exercicio que deseja acessar:\n");
     while(1) {
-        scanf("%d", &exer);
+        scanf(" %d", &exer);
         if(exer == 1) { //Exercício 1:
             float peso, altura, res;
             printf("Insira o seu peso em kg: \n");
-            scanf("%f", &peso);
+            scanf(" %f", &peso);
             printf("Insira a sua altura em metros: \n");
-            scanf("%f", &altura);
+            scanf(" %f", &altura);
 
             res = imc(peso, altura);
 
@@ -120,7 +120,7 @@ int main(){
         }else if(exer == 2) {//Exercício 2:
             int n, res;
             printf("Insira o valor de N: \n");
-            scanf("%d", &n);
+            scanf(" %d", &n);
 
             res = somatorio(n);
 

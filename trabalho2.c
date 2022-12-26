@@ -6,18 +6,18 @@ int main(){
     int exer;
     printf("Insira o numero do exercicio que deseja acessar:\n");
     while(1){
-        scanf("%d", &exer);
+        scanf(" %d", &exer);
 
         if(exer == 1){
             int l1, c1, l2, c2;
             printf("Digite o numero de linhas da Matriz1:\n");
-            scanf("%d", &l1);
+            scanf(" %d", &l1);
             printf("Digite o numero de colunas da Matriz1:\n");
-            scanf("%d", &c1);
+            scanf(" %d", &c1);
             printf("Digite o numero de linhas da Matriz2:\n");
-            scanf("%d", &l2);
+            scanf(" %d", &l2);
             printf("Digite o numero de colunas da Matriz2:\n");
-            scanf("%d", &c2);
+            scanf(" %d", &c2);
 
             if (l1 != c2 || c1 != l2) {
                 printf("Essas matrizes são imcompativeis.\n");
@@ -27,14 +27,14 @@ int main(){
                 for (int i = 0; i < l1; i++) {
                     for (int j = 0; j < c1; j++) {
                         printf("Matriz1[%d][%d]= \n", i, j);
-                        scanf("%f", &matriz1[i][j]);
+                        scanf(" %f", &matriz1[i][j]);
                     }
                 }
 
                 for (int i = 0; i < l2; i++) {
                     for (int j = 0; j < c2; j++) {
                         printf("Matriz2[%d][%d]= \n", i, j);
-                        scanf("%f", &matriz2[i][j]);
+                        scanf(" %f", &matriz2[i][j]);
                     }
                 }
 
@@ -63,7 +63,7 @@ int main(){
             for(int i = 0; i < 10; i++){
                 for(int j = 0; j < 3; j++){
                     printf("Insira a nota do aluno %d, na prova %d:\n", (i + 1), (j + 1));
-                    scanf("%f", &notas[i][j]);
+                    scanf(" %f", &notas[i][j]);
                 }
             }
 
@@ -118,7 +118,7 @@ int main(){
             for(int i = 0; i < 6; i++){
                 for(int j = 0; j < 6; j++){
                     printf("Matriz[%d][%d]=\n", i, j);
-                    scanf("%d", &matriz[i][j]);
+                    scanf(" %d", &matriz[i][j]);
                     if(i > j){
                         soma += matriz[i][j];
                     }
@@ -171,16 +171,16 @@ int main(){
             int p, q;
 
             printf("Insira o numero de linhas da Matriz:\n");
-            scanf("%d", &p);
+            scanf(" %d", &p);
             printf("Insira o numero de colunas da Matriz:\n");
-            scanf("%d", &q);
+            scanf(" %d", &q);
 
             int matriz[p][q], vetor1[p], vetor2[q], soma;
 
             for(int i = 0; i < p; i++){
                 for(int j = 0; j < q; j++){
                     printf("Matriz[%d][%d]=\n", i, j);
-                    scanf("%d", &matriz[i][j]);
+                    scanf(" %d", &matriz[i][j]);
                 }
             }
 

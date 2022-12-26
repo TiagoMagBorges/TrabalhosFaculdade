@@ -6,20 +6,20 @@ int main(){
     int exer;
     printf("Insira o exercicio que deseja acessar:\n");
     while(1){
-        scanf("%d", &exer);
+        scanf(" %d", &exer);
         if(exer == 1){
             int l1, c1, l2, c2;
 
             // Recebendo o tamanho das Matrizes e checando se são compatíveis.
             while(1){
                 printf("Insira o numero de linhas da Matriz1:\n");
-                scanf("%d", &l1);
+                scanf(" %d", &l1);
                 printf("Insira o numero de colunas da Matriz1:\n");
-                scanf("%d", &c1);
+                scanf(" %d", &c1);
                 printf("Insira o numero de linhas da Matriz2:\n");
-                scanf("%d", &l2);
+                scanf(" %d", &l2);
                 printf("Insira o numero de colunas da Matriz2:\n");
-                scanf("%d", &c2);
+                scanf(" %d", &c2);
 
                 if(l1 != c2){
                     printf("As matrizes nao sao compativeis, tente novamente.\n");
@@ -48,14 +48,14 @@ int main(){
             for(int i = 0; i < l1; i++){
                 for(int j = 0; j < c1; j++){
                     printf("Insira o valor para Matriz1[%d][%d]:\n", i, j);
-                    scanf("%f", &matriz1[i][j]);
+                    scanf(" %f", &matriz1[i][j]);
                 }
             }
 
             for(int i = 0; i < l2; i++){
                 for(int j = 0; j < c2; j++){
                     printf("Insira o valor para Matriz2[%d][%d]:\n", i, j);
-                    scanf("%f", &matriz2[i][j]);
+                    scanf(" %f", &matriz2[i][j]);
                 }
             }
 
@@ -106,7 +106,7 @@ int main(){
             for(int i = 0; i < 5; i++){
                 for(int j = 0; j < 5; j++){
                     printf("Insira o valor para Matriz[%d][%d]:\n", i, j);
-                    scanf("%f", &matriz[i][j]);
+                    scanf(" %f", &matriz[i][j]);
                 }
             }
 
@@ -115,7 +115,7 @@ int main(){
             int contador = 0;
             while(1){
                 printf("Insira o valor que deseja procurar, caso deseje encerrar a busca, digite 0.\n");
-                scanf("%f", &valor);
+                scanf(" %f", &valor);
                 if(valor == 0){
                     break;
                 }else{
@@ -175,7 +175,7 @@ int main(){
             for(int i = 0; i < 5; i++){
                 for(int j = 0; j < 5; j++){
                     printf("Insira o valor para Matriz[%d][%d]:\n", i, j);
-                    scanf("%f", &matriz[i][j]);
+                    scanf(" %f", &matriz[i][j]);
                 }
             }
 
@@ -184,7 +184,7 @@ int main(){
             int contador = 0;
             while(1){
                 printf("Insira o valor que deseja procurar, caso deseje encerrar a busca, digite 0.\n");
-                scanf("%f", &valor);
+                scanf(" %f", &valor);
                 if(valor == 0){
                     break;
                 }else{
@@ -244,7 +244,7 @@ int main(){
             for(int i = 0; i < linha; i++){
                 for(int j = 0; j < coluna; j++){
                     printf("Insira o valor para Matriz[%d][%d]:\n", i, j);
-                    scanf("%d", &matriz[i][j]);
+                    scanf(" %d", &matriz[i][j]);
                 }
             }
 
