@@ -272,11 +272,12 @@ void inserir(FILE *arquivo){
     printf("====================\n"
            "Informacoes sobre o veiculo.\n");
     printf("Placa: \n");
-    gets(x->placa);
+    fflush(stdin);
+    gets(x->placa);fflush(stdin);
     printf("Modelo: \n");
-    gets(x->modelo);
+    gets(x->modelo);fflush(stdin);
     printf("Cor: \n");
-    gets(x->cor);
+    gets(x->cor);fflush(stdin);
     validahorarioentrada(x);
     x->status = 'P';
     fseek(arquivo, 0, SEEK_END);
@@ -293,17 +294,18 @@ void inserir(FILE *arquivo){
 */
 void listar(FILE *arquivo){
     rewind(arquivo);
-    Carro x;
-    while(fread(&x, sizeof(Carro), 1, arquivo) == 1){
-        if(x.status == 'P'){
+    Carro *x = (Carro*) malloc(sizeof(Carro));
+    while(fread(x, sizeof(Carro), 1, arquivo) == 1){
+        if(x->status == 'P'){
             printf("====================\n"
                    "Placa: %s\n"
                    "Modelo: %s\n"
                    "Cor: %s\n"
                    "Data e hora: %.2d/%.2d/%.4d %.2d:%.2d\n"
-                   "====================\n", x.placa, x.modelo, x.cor ,x.inicio.dia, x.inicio.mes, x.inicio.ano, x.inicio.hora, x.inicio.min);
+                   "====================\n", x->placa, x->modelo, x->cor, x->inicio.dia, x->inicio.mes, x->inicio.ano, x->inicio.hora, x->inicio.min);
         }
     }
+    free(x);
 }
 
 /*
@@ -315,19 +317,20 @@ void listar(FILE *arquivo){
 void buscar(FILE *arquivo){
     rewind(arquivo);
     char placa[8];
-    Carro x;
+    Carro *x = (Carro*) malloc(sizeof(Carro));
     printf("Digite a placa do veiculo: \n");
-    gets(placa);
-    while(fread(&x, sizeof(Carro), 1, arquivo) == 1){
-        if(strcmp(placa, x.placa) == 0 && x.status == 'P'){
+    gets(placa);fflush(stdin);
+    while(fread(x, sizeof(Carro), 1, arquivo) == 1){
+        if(strcmp(placa, x->placa) == 0 && x->status == 'P'){
             printf("====================\n"
                    "Placa: %s\n"
                    "Modelo: %s\n"
                    "Cor: %s\n"
                    "Data e hora: %.2d/%.2d/%.4d %.2d:%.2d\n"
-                   "====================\n", x.placa, x.modelo, x.cor ,x.inicio.dia, x.inicio.mes, x.inicio.ano, x.inicio.hora, x.inicio.min);
+                   "====================\n", x->placa, x->modelo, x->cor ,x->inicio.dia, x->inicio.mes, x->inicio.ano, x->inicio.hora, x->inicio.min);
         }
     }
+    free(x);
 }
 
 /*
@@ -341,17 +344,17 @@ void alterar(FILE *arquivo){
     rewind(arquivo);
     int posicao;
     char placa[8];
-    Carro x;
+    Carro *x = (Carro*) malloc(sizeof(Carro));
     printf("Digite a placa do veiculo a ser alterado: \n");
-    gets(placa);
-    while(fread(&x, sizeof(Carro), 1, arquivo) == 1){
-        if(strcmp(placa, x.placa) == 0 && x.status == 'P'){
+    gets(placa);fflush(stdin);
+    while(fread(x, sizeof(Carro), 1, arquivo) == 1){
+        if(strcmp(placa, x->placa) == 0 && x->status == 'P'){
             printf("====================\n"
                    "Placa: %s\n"
                    "Modelo: %s\n"
                    "Cor: %s\n"
                    "Data e hora: %.2d/%.2d/%.4d %.2d:%.2d\n"
-                   "====================\n", x.placa, x.modelo, x.cor ,x.inicio.dia, x.inicio.mes, x.inicio.ano, x.inicio.hora, x.inicio.min);
+                   "====================\n", x->placa, x->modelo, x->cor ,x->inicio.dia, x->inicio.mes, x->inicio.ano, x->inicio.hora, x->inicio.min);
             int op;
             do{
                 printf("====================\n"
@@ -364,15 +367,16 @@ void alterar(FILE *arquivo){
                        "Opcao: \n");
                 scanf(" %d", &op);
                 switch (op){
-                    case 1: printf("Placa antiga: %s\nPlaca atual: ", x.placa);gets(x.placa);break;
-                    case 2: printf("Modelo antigo: %s\nModelo atual: ", x.modelo);gets(x.modelo);break;
-                    case 3: printf("Cor antiga: %s\nCor atual: ", x.cor);gets(x.cor);break;
+                    case 1: printf("Placa antiga: %s\nPlaca atual: ", x->placa);gets(x->placa);fflush(stdin);break;
+                    case 2: printf("Modelo antigo: %s\nModelo atual: ", x->modelo);gets(x->modelo);fflush(stdin);break;
+                    case 3: printf("Cor antiga: %s\nCor atual: ", x->cor);gets(x->cor);fflush(stdin);break;
                 }
             }while(op != 0);
             posicao = ftell(arquivo) - sizeof(Carro);
             rewind(arquivo);
             fseek(arquivo, posicao, SEEK_SET);
-            fwrite(&x, sizeof(Carro), 1, arquivo);
+            fwrite(x, sizeof(Carro), 1, arquivo);
+            free(x);
             printf("Alterado com sucesso, retornando ao menu.\n");
             break;
         }
